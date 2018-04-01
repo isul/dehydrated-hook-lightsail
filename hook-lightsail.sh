@@ -123,14 +123,14 @@ deploy_cert() {
     # cp "${KEYFILE}" "${FULLCHAINFILE}" /etc/nginx/ssl/; chown -R nginx: /etc/nginx/ssl
     # systemctl reload nginx
 
-    cat ${FULLCHAINFILE} ${KEYFILE} > ${FULLCHAINFILE}.${DOMAIN}
-    echo "Saved certificate to ${FULLCHAINFILE}.${DOMAIN}"
+    #cat ${FULLCHAINFILE} ${KEYFILE} > ${FULLCHAINFILE}.${DOMAIN}
+    #echo "Saved certificate to ${FULLCHAINFILE}.${DOMAIN}"
 
-    if [[ $DOMAIN != *"*."* ]]; then
+    #if [[ $DOMAIN != *"*."* ]]; then
       #echo "Restarting haproxy..."
       #killall haproxy
       #/usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/var/haproxy.cfg -p /usr/local/haproxy/var/haproxy.pid
-    fi
+    #fi
 }
 
 unchanged_cert() {
