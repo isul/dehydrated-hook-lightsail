@@ -30,9 +30,6 @@ Default region name [None]: us-east-1
 Default output format [None]: json
 ```
 
-**Please note that you should use the staging URL when experimenting with this script to not hit Let's Encrypt's rate limits.** See [https://github.com/lukas2511/dehydrated/blob/master/docs/staging.md](https://github.com/lukas2511/dehydrated/blob/master/docs/staging.md).
-
-
 ## Dependencies
 
 The script requires the following tools.
@@ -50,6 +47,7 @@ $ ./dehydrated -c -d example.com -t dns-01 -k 'hooks/lightsail/hook-lightsail.sh
 The -t dns-01 part can be skipped, if you have set this challenge type in your config already. Same goes for the -k 'hooks/lightsail/hook-lightsail.sh' part, when set in the config as well.
 
 If you would like to sign wildcard certificates use run.sh
+
 You need to change the following settings in your dehydrated domains.txt:
 ```
 example.com *.example.com > example.com
@@ -60,7 +58,9 @@ DEHYDRATED_DIR=/volume1/system/usr/local/dehydrated
 DOMAIN=example.com
 ```
 
-And then run following script.
+And then run the following script.
 ```
 $ ./hooks/lightsail/run.sh
 ```
+
+**Please note that you should use the staging URL when experimenting with this script to not hit Let's Encrypt's rate limits.** See [https://github.com/lukas2511/dehydrated/blob/master/docs/staging.md](https://github.com/lukas2511/dehydrated/blob/master/docs/staging.md).
