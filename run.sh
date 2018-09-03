@@ -6,6 +6,11 @@ DEHYDRATED_DIR=/volume1/system/usr/local/dehydrated
 # your domain
 DOMAIN=example.com
 
+if [ -d "$DEHYDRATED_DIR/certs/$DOMAIN.backup" ]; then
+  rm -rf $DEHYDRATED_DIR/certs/$DOMAIN.backup
+fi
+mv $DEHYDRATED_DIR/certs/$DOMAIN $DEHYDRATED_DIR/certs/$DOMAIN.backup
+
 $DEHYDRATED_DIR/dehydrated -c -d *.$DOMAIN --alias $DOMAIN
 $DEHYDRATED_DIR/dehydrated -c
 
