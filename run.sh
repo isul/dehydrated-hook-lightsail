@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Path to a directory containing dehydrated
 DEHYDRATED_DIR=/volume1/system/usr/local/dehydrated
@@ -27,7 +27,7 @@ while [[ $i -ge 0 ]] ; do
   elif [ "$TYPE" == "null" ]; then
     i=-1
   else
-    (( i++ ))
+    i=$(( $i+1 ))
   fi
 done
 ENTRY={\"type\":\"TXT\",\"isAlias\":false,\"target\":\"\\\"$TOKEN_VALUE\\\"\",\"id\":\"$ID\",\"name\":\"_acme-challenge.$DOMAIN\"}
